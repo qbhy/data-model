@@ -1,14 +1,10 @@
 {
-  "name": "data-model",
-  "version": "0.0.1",
+  "name": "q-data-model",
+  "version": "1.0.0",
   "description": "数据模型",
-  "main": "data.js",
+  "main": "src/data.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/qbhy/data-model.git"
   },
   "keywords": [
     "data",
