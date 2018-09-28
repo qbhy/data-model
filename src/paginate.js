@@ -3,7 +3,11 @@ import BaseModel from "./model";
 export default class Pagination extends BaseModel {
 
     constructor(props, dataClass) {
-        props.list = new List(props.list, dataClass);
+        if (dataClass instanceof List) {
+            props.list = dataClass.initialItems(props.list);
+        } else {
+            props.list = new List(props.list, dataClass);
+        }
 
         super(props);
     }
@@ -20,7 +24,7 @@ export default class Pagination extends BaseModel {
      * 总数量
      * @returns {number}
      */
-    totalPage() {
+    total() {
         return this.get('total', 0);
     }
 

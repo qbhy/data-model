@@ -3,9 +3,9 @@ import DataClass from "./data";
 export default class List extends DataClass {
     /**
      * @param {array} items
-     * @param {BaseModel} dataClass
+     * @param {BaseModel|undefined} dataClass
      */
-    constructor(items, dataClass) {
+    constructor(items, dataClass = undefined) {
         if (items instanceof Pagination) {
             items = items.items();
         }
@@ -25,6 +25,16 @@ export default class List extends DataClass {
      */
     map(callback) {
         return this.data.map(callback);
+    }
+
+    /**
+     * 初始化列表数据
+     * @param items
+     * @return self
+     */
+    initialItems(items) {
+        this.data = items;
+        return this;
     }
 
 }
